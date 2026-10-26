@@ -42,8 +42,8 @@ Anschrift und E-Mail (`christian.halstrick@mailbox.org`) stehen in Support, Date
 Erledigt am 26.10.2026: Push, Pages (Branch `main`, `/`), CNAME `chris-code.de`,
 DNS bei INWX, Let's-Encrypt-Zertifikat (chris-code.de + www), HTTPS erzwungen.
 
-Noch offen:
-- **Domain verifizieren:** GitHub › Account › Settings › Pages › Add a domain. Den TXT-Eintrag macht der Nutzer bei INWX.
+Domain im GitHub-Konto verifiziert. Der TXT-Eintrag
+`_github-pages-challenge-christian-halstrick` bei INWX muss dafür stehen bleiben.
 
 Hinweis: Ändert man `cname` per API, committet GitHub die Datei `CNAME` selbst,
 mit der Commit-Adresse aus dem GitHub-Konto. Danach `git pull`.

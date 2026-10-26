@@ -39,19 +39,21 @@ Anschrift und E-Mail (`christian.halstrick@mailbox.org`) stehen in Support, Date
 - Commit-Identität im Repo: `Christian Halstrick <348430540+christian-halstrick@users.noreply.github.com>`.
   Keine privaten Mailadressen in Commits.
 
-Erledigt am 26.10.2026: Login, Push, Pages eingeschaltet (Branch `main`, `/`), CNAME `chris-code.de` gesetzt.
+Erledigt am 26.10.2026: Push, Pages (Branch `main`, `/`), CNAME `chris-code.de`,
+DNS bei INWX, Let's-Encrypt-Zertifikat (chris-code.de + www), HTTPS erzwungen.
 
 Noch offen:
-1. **DNS bei INWX** umstellen (siehe unten).
-2. **Domain verifizieren:** GitHub › Settings › Pages bzw. Account › Pages verified domains. Den TXT-Eintrag macht der Nutzer bei INWX.
-3. **HTTPS:** Sobald das Zertifikat da ist (Let's Encrypt, automatisch):
-   `gh api -X PUT repos/christian-halstrick/chris-code.de/pages -F https_enforced=true`
+- **Domain verifizieren:** GitHub › Account › Settings › Pages › Add a domain. Den TXT-Eintrag macht der Nutzer bei INWX.
+
+Hinweis: Ändert man `cname` per API, committet GitHub die Datei `CNAME` selbst,
+mit der Commit-Adresse aus dem GitHub-Konto. Danach `git pull`.
 
 ## DNS bei INWX
 
 - Registrar und Nameserver: INWX (`ns.inwx.de`, `ns2.inwx.de`, `ns3.inwx.eu`).
 - Kein Webspace bei INWX.
-- Bisher zeigen `@` und `www` auf eine INWX-Parkseite (`185.181.104.242`). Diese Einträge müssen weg.
+- Die alte INWX-Parkseite (`185.181.104.242`) ist entfernt. NS- und SOA-Einträge bleiben unverändert.
+- Bei INWX pro Adresse ein eigener Eintrag, Name für die Hauptdomain leer lassen.
 
 Der Nutzer setzt die Einträge selbst. Danach mit `dig` prüfen.
 

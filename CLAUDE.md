@@ -27,9 +27,9 @@ Konventionen:
 - Jede Seite: Deutsch oben, Englisch darunter in `<section id="en" lang="en">`.
   Die App-Store-Links fürs Englische zeigen auf `…/#en`.
 
-## Offene Platzhalter
+## Kontaktdaten
 
-`[ANSCHRIFT]` und `[E-MAIL]` in Support, Datenschutz und Impressum.
+Anschrift und E-Mail (`christian.halstrick@mailbox.org`) stehen in Support, Datenschutz und Impressum.
 - Fürs Impressum ist eine ladungsfähige Anschrift nötig, kein Postfach.
 - Beim Ändern der Datenschutzerklärung das „Stand“-Datum (de und en) anpassen.
 
@@ -39,14 +39,12 @@ Konventionen:
 - Commit-Identität im Repo: `Christian Halstrick <348430540+christian-halstrick@users.noreply.github.com>`.
   Keine privaten Mailadressen in Commits.
 
-Noch zu tun:
-1. **Login:** Der Nutzer führt `gh auth login` und `gh auth setup-git` selbst aus (interaktiv).
-2. **Push:** `git push -u origin main`. Stand 26.10.2026 liegt ein lokaler Commit vor, noch nicht gepusht.
-3. **Pages einschalten:**
-   - `gh api -X POST repos/christian-halstrick/chris-code.de/pages -f "source[branch]=main" -f "source[path]=/"`
-   - dann `gh api -X PUT repos/christian-halstrick/chris-code.de/pages -f cname=chris-code.de`
-4. **Domain verifizieren:** GitHub › Settings › Pages bzw. Account › Pages verified domains. Den TXT-Eintrag macht der Nutzer bei INWX.
-5. **HTTPS:** Sobald das Zertifikat da ist (Let's Encrypt, automatisch):
+Erledigt am 26.10.2026: Login, Push, Pages eingeschaltet (Branch `main`, `/`), CNAME `chris-code.de` gesetzt.
+
+Noch offen:
+1. **DNS bei INWX** umstellen (siehe unten).
+2. **Domain verifizieren:** GitHub › Settings › Pages bzw. Account › Pages verified domains. Den TXT-Eintrag macht der Nutzer bei INWX.
+3. **HTTPS:** Sobald das Zertifikat da ist (Let's Encrypt, automatisch):
    `gh api -X PUT repos/christian-halstrick/chris-code.de/pages -F https_enforced=true`
 
 ## DNS bei INWX

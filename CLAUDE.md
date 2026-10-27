@@ -29,7 +29,8 @@ Konventionen:
 
 ## Kontaktdaten
 
-Anschrift und E-Mail (`christian.halstrick@mailbox.org`) stehen in Support, Datenschutz und Impressum.
+Anschrift und E-Mail (`support@chris-code.de`) stehen in Support, Datenschutz und Impressum.
+Die private Adresse `christian.halstrick@mailbox.org` nicht auf die Website schreiben.
 - Fürs Impressum ist eine ladungsfähige Anschrift nötig, kein Postfach.
 - Beim Ändern der Datenschutzerklärung das „Stand“-Datum (de und en) anpassen.
 
@@ -56,6 +57,14 @@ mit der Commit-Adresse aus dem GitHub-Konto. Danach `git pull`.
 - Bei INWX pro Adresse ein eigener Eintrag, Name für die Hauptdomain leer lassen.
 
 Der Nutzer setzt die Einträge selbst. Danach mit `dig` prüfen.
+
+E-Mail für chris-code.de läuft über mailbox.org (Alias `support@chris-code.de` im Postfach
+des Nutzers, seit 27.10.2026). Diese Einträge müssen stehen bleiben:
+- MX: `mxext1` bis `mxext4.mailbox.org`, Prio 10
+- TXT `@`: `v=spf1 include:mailbox.org ~all`
+- TXT `_dmarc`: `v=DMARC1; p=none`
+- CNAME `MBO0001._domainkey` bis `MBO0004._domainkey` → `mbo000N._domainkey.mailbox.org`
+- TXT mit dem mailbox.org-Sicherheitsschlüssel (Domain-Bestätigung)
 
 | Name | Typ | Wert |
 |---|---|---|
